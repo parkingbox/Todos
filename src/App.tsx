@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { darkTheme, lightTheme } from "./theme";
+import { theme } from "./theme";
 import ToDoList  from './ToDoList'
+import { useRecoilValue } from 'recoil';
 
-const Reset = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -68,11 +69,10 @@ const Reset = createGlobalStyle`
 `;
 
 function App() {
-  const theme = useRecoilValue(themeState);
   return (
     <>
-      <ThemeProvider theme={theme ? lightTheme : darkTheme}>
-        <Reset />
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <ToDoList />
       </ThemeProvider>
     </>
