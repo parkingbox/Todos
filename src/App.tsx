@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { theme } from "./theme";
-import ToDoList  from './ToDoList'
+import ToDoList  from './components/ToDoList'
 import { useRecoilValue } from 'recoil';
 
 const GlobalStyle = createGlobalStyle`
